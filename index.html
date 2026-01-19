@@ -55,6 +55,10 @@
         background:linear-gradient(180deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));
         color: #000;       
     }
+
+
+    /* about the podcast section */
+
      
     /* main style section */
 
@@ -257,7 +261,7 @@
     transition:gap 1s ease;
 }
 .banner:hover .banner-btn{
-    gap: 100px;
+    gap: 20px;
 }
 
 .button{
@@ -308,8 +312,116 @@
   width: 100%;
 }
 
+/* about the podcast section */
 
+.about-podcast{
+    margin-top:100px;
+}
 
+.podcastParent .text-section{
+    max-width: 608px;
+    margin:0 auto;
+    text-align: center;
+}
+.text-section h2{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.text-section p{
+    color:var(--small-text-color);
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.paragrap-lastLine{
+    color:var(--small-text-color);
+    font-size: 13px;
+}
+
+.rating-cards{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns: repeat(4, 200px);
+    justify-content: space-between;
+}
+
+.rating-cards .card{
+    text-align: center;
+    padding:10px;
+}
+
+.rating-cards .card h1{
+    font-size: 48px;
+    color:var(--bold-text-color);
+    font-weight: bold;
+}
+.rating-cards .card p{
+    color:var(--small-text-color);
+    font-size: 14px;
+}
+
+  /* why choose techwave  section*/
+
+  .why-choose-techwave{
+    margin-top: 100px;
+  }
+  .why-choose-techwave h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 40px;
+    color:var(--small-text-color);
+  }
+
+  .techweve-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    gap:15px;
+  }
+
+  .techweve-container .card{
+    background-color: #2a0f4d;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+  }
+
+  .card:hover{
+    box-shadow: 0 0 5px 2px #ffffff5b;
+    background-color: rgba(0, 0, 0, 0.445);
+  }
+  .card h3{
+    font-size: 24px;
+    color:var(--small-text-color);
+    margin:10px 0 15px;
+  }
+  .card p{
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .techweve-container .card img{
+    width: 40px;
+
+  }
+
+  .card1{
+    grid-row: 1 / span 2;
+  }
+  .card2{
+    grid-column:2 / span 2;
+  }
+  .card3{
+    grid-column: 2 / span 2;
+  }
+  .card4{
+    grid-column: 1 / span 2;
+  }
 
 
  /*----------------- mobile responsive------------ */
@@ -329,6 +441,32 @@
         flex-wrap: wrap;
         text-align: center;
      }
+
+     .rating-cards{
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap:20px;
+    justify-content: center;
+     justify-items: center;
+    } 
+
+    .rating-cards .card h1{
+    font-size: 38px;
+    } 
+
+    .rating-cards .card p{
+    font-size: 15px;
+}
+
+.techweve-container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap:20px;
+}
+ 
+.card1,.card2,.card3,.card4{
+    grid-column: auto;
+    grid-row: auto;
+}
     
  }
 
@@ -374,7 +512,81 @@
              </div>
          </section>
     </header>
-    <main></main>
+    <main>
+        <!-- about the podcast section  -->
+       <section class="about-podcast max-width">
+        <div class="podcastParent">
+             <div class="text-section">
+                <h2>About the Podcast</h2>
+                <p>TechWave is your go-to podcast for staying ahead in the fast-paced world of technology.
+                   We break down complex topics into digestible insights, explore productivity strategies that actually work,
+                   and share stories of personal growth from industry leaders.</p>
+                    <span class="paragrap-lastLine">Join thousands of young professionals and tech enthusiasts who start their day with TechWave.</span>
+                </div>
+
+                <div class="rating-cards">
+                    <div class="card">
+                        <h1>150K+</h1>
+                        <p>Monthly Listeners</p>
+                    </div>
+
+                    <div class="card">
+                        <h1>200+</h1>
+                        <p>Episodes Published</p>
+                    </div>
+
+                    <div class="card">
+                        <h1>4.9 <i class="fa-solid fa-star"></i></h1>
+                        <p>Average Rating</p>
+                    </div>
+
+                     <div class="card">
+                        <h1>50+</h1>
+                        <p>Industry Experts</p>
+                    </div>
+
+                  </div>
+        </div>
+       </section>
+
+       <!-- why choose techwave section -->
+        <section class="why-choose-techwave max-width">
+           <h1>Why Choose TechWave</h1>
+
+           <div class="techweve-container">
+             <div class="card1 card">
+                <img src="./assets/headphone.png" alt="device">
+                <h3>Premium Audio Quality</h3>
+                <p>Experience crystal-clear sound with professional-grade recording equipment and expert audio engineering. Every episode is mastered for optimal listening across all devices and platforms.</p>
+            </div>
+
+            <div class="card2 card">
+                <img src="./assets/device.png" alt="device">
+                <h3>Mobile Friendly</h3>
+                <p>Listen on the go with seamless mobile experience and offline downloads.</p>
+            </div>
+
+            <div class="card3 card">
+                <img src="./assets/location.png" alt="device">
+                <h3>Global Community</h3>
+                <p>Connect with tech enthusiasts from over 120 countries worldwide.</p>
+            </div>
+
+            <div class="card4 card">
+                <i class="fa-solid fa-star-of-life"></i>
+                <h3>Exclusive Interviews</h3>
+                <p>Get unprecedented access to industry titans, startup founders, and tech visionaries. Our host secures exclusive conversations you won't find anywhere else, diving deep into their journeys, failures, and success strategies.</p>
+            </div>
+
+             <div class="card5 card">
+                <img src="./assets/resource.png " alt="">
+                <h3>Rich Resources</h3>
+                <p>Access show notes, transcripts, and additional learning materials for every episode.</p>
+            </div>
+           </div>
+
+        </section>
+    </main>
     <footer></footer>
 </body>
 </html>
