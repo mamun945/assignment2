@@ -227,17 +227,28 @@
  position: absolute;
  z-index: 100;
  right:10px;
- top:0px;
- padding: 8px 18px;
+ top:10px;
+ padding:6px 10px;
  background-color: var(--bold-text-color);
  border-radius: 50px;
  color:black;
  font-size: 18px;
  font-weight: 600;
+animation: heart .5s ease infinite alternate;
+}
+
+@keyframes heart{
+    from{
+        transform: scale(1.5);
+         background-color:red;
+    }
+    to{transform:scale(1);
+       color:red; 
+    }
 }
 
 .text-section{
-    margin-top:20px;
+    margin-top:50px;
     position: relative;
     z-index: 100;
 }
@@ -315,7 +326,7 @@
 /* about the podcast section */
 
 .about-podcast{
-    margin-top:100px;
+    margin-top:190px;
 }
 
 .podcastParent .text-section{
@@ -427,9 +438,119 @@
    /* -----------featured Epishodes */
 
 
+   /* meet the host section */
+
+   .meet-host{
+    margin-top: 100px;
+    margin-bottom:100px;
+   }
+
+   .meet-host h1{
+      margin-bottom:30px;
+      text-align: center;
+   }
+
+   .meet-parent{
+   background-color: #2a0f4d;
+   padding: 40px;
+   border-radius:10px;
+   position: relative;
+   overflow: hidden;
+
+   }
+
+   .meet-parent::after{
+    content:'';
+    position: absolute;
+    height:10px;
+    width:110%;
+    left:-5%;
+    top:60%;
+    background-color:var(--bold-text-color);
+    animation:rotate 10s ease infinite ;
+    z-index: 5;
+   }
+
+    @keyframes rotate{
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+   }
+
+    .meet-parent::before{
+    content:'';
+    position: absolute;
+    height:98%;
+    width:99.2%;
+    left:.5%;
+    top:1%;
+    background-color: #2a0f4d;
+    border-radius:10px;
+    z-index: 10;
+   }
+
+   .meet-inner-parent{
+    display: flex;
+    align-items: center;
+    gap:50px;
+     position: relative;
+     z-index: 20;
+   }
+
+   .meet-text-section h2{
+     font-size: 32px;
+     margin-bottom:10px;
+   }  
+  .meet-text-section p{
+     font-size: 1rem;
+     color:var(--small-text-color);
+     line-height:25px;
+  }
+
+  .social-icons{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    margin-top:15px;
+  }
+.social-icons div{
+    height:40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid rgba(83, 60, 114, 1);
+    background-image:var(--big-text-color);
+    border-radius: 50%;
+}
+
  /*----------------- mobile responsive------------ */
 
  @media screen and (max-width:576px) {
+
+
+    .banner{
+        height: 360px;
+    }
+    .image-div{
+    height: 260px;
+    min-width: 260px;
+    }
+
+     .image-circle{
+    background-size:contain;
+     height:72%; 
+    }
+    .image-circle img{
+        max-width: 60px;
+    }
+    .text-section{
+        margin-top: 0px;
+        padding:0 8px;
+    }
+    .new{
+        right: 35px;
+    }
+     
      .btn2{
         display:none;
      }
@@ -470,10 +591,23 @@
     grid-column: auto;
     grid-row: auto;
 }
+
+
+.meet-inner-parent{
+    flex-direction: column;
+
+   }
+.meet-text-section{
+    text-align: center;
+}
+ .meet-parent{
+   padding:15px;
+   }
+   .social-icons{
+    justify-content: center;
+   }
     
  }
-
-
 
 
     </style>
@@ -594,6 +728,38 @@
          <section class="featur-epishod-section">
 
          </section>
+
+         <!-- meet the host -->
+          <section class="meet-host max-width">
+             <h1>Meet the Host</h1>
+             <div class="meet-parent">
+                    <div class="meet-inner-parent">
+                         <div class="image">
+                    <img src="./assets/host.png" alt="">
+                </div>
+                <div class="meet-text-section">
+                    <h2>Alex Kumar</h2>
+                    <p>Tech entrepreneur, productivity expert, and lifelong learner. Alex has been in the tech industry for over 10 years, working with startups and Fortune 500 companies. Through TechWave, Alex shares insights from industry leaders and practical advice for anyone looking to grow in tech.</p>
+                    <div class="social-icons">
+                        <div>
+                           <img src="./assets/linkedin.png" alt="">
+                        </div>
+                          <div>
+                            <img src="./assets/twitter.png" alt="">
+                          </div>
+                        <div>
+                            <img src="./assets/instagram.png" alt="">
+                        </div>
+                        <div>
+                           <img src="./assets/youtube.png" alt="">  
+                        </div>
+                            
+                    </div>
+                    </div>
+               
+                </div>
+             </div>
+          </section>
     </main>
     <footer></footer>
 </body>
