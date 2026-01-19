@@ -52,12 +52,13 @@
         cursor: pointer;
        }
        .btn:hover{
-        background:linear-gradient(90deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));
-       }
+        background:linear-gradient(180deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));
+        color: #000;       
+    }
      
     /* main style section */
 
-     /* nav bar style section  */
+     /*---------- nav bar style section---------------  */
     header{
         margin-top:20px;
     }
@@ -66,7 +67,7 @@
         align-items: center;
         justify-content: space-between;
     }
-    header nav ul{
+     .manue{
         display: flex;
         align-items: center;
         gap:32px
@@ -135,9 +136,201 @@
     .btn2:hover{
         transform: scaleX(1.2);
     }
+    .bar{
+        display: none;
+    }
+
+    /*----------- hero banner section----------------  */
+.banner{
+    height: 500px;
+    width: 100%;
+    background-image: url('./assets/hero-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top:15px;
+    border-top:.1px solid rgba(128, 128, 128, 0.326);
+    position: relative;
+}
+
+.shadow1{
+    position: absolute;
+    height:100%;
+    width:0%;
+    left: 0;
+    top:0;
+    background-color:rgba(0,0,0,0.4);
+    transition:all 1.2s ease;
+}
+
+  .banner:hover .shadow1{
+    width:50%;
+} 
+
+.shadow2{
+    position: absolute;
+    height:100%;
+    width:0%;
+    right: 0;
+    top:0;
+    background-color:rgba(0,0,0,0.4);
+    transition:all 1.2s ease;
+}
+
+ .banner:hover .shadow2{
+    width:50%;
+} 
+
+.imgAndTextParent{
+    max-width: 550px;
+    margin:0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 35px;
+}
+
+.image-div{
+    height:260px;
+    min-width:260px;
+     position: relative;
+}
+
+.image-circle{
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/hero-circle.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:transform 1s ease;
+}
+.image-circle img{
+    max-width: 100px;
+    height:auto;
+}
+
+.banner:hover .image-circle{
+   transform: rotate(360deg) scale(1.1);
+   filter: brightness(1) saturate(1);
+} 
+
+.new{
+ position: absolute;
+ z-index: 100;
+ right:10px;
+ top:0px;
+ padding: 8px 18px;
+ background-color: var(--bold-text-color);
+ border-radius: 50px;
+ color:black;
+ font-size: 18px;
+ font-weight: 600;
+}
+
+.text-section{
+    margin-top:20px;
+    position: relative;
+    z-index: 100;
+}
+.text-section h2{
+    font-size:50px;
+    color:white;
+    margin-bottom: 5px;
+}
+
+.text-section p{
+    font-size:14px;
+    font-weight: 400;
+    margin-bottom:20px;
+}
+
+.banner-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    transition:gap 1s ease;
+}
+.banner:hover .banner-btn{
+    gap: 100px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    gap:8px;
+    animation: change2 2s ease infinite alternate;
+    transition: transform 1s ease;
+}
+.button:hover{
+    transform: scaleX(1.2);
+}
+
+@keyframes change2{
+    40%{background:linear-gradient(45deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));}
+    80%{background:linear-gradient(90deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));}
+    100%{background:linear-gradient(180deg,rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1));}
+}
+
+.button2{
+     padding: 12px 20px;
+     border-radius: 50px;
+     cursor: pointer;
+     display:flex;
+     align-items: center;
+     gap:8px;
+     border:none;
+     font-size:1rem;
+     border:1px solid var(--bold-text-color);
+     color:var(--bold-text-color);
+     background-color: transparent;
+     position: relative;
+     overflow: hidden;
+}
+
+.button2::before{
+    content:'';
+    position: absolute;
+    height:100%;
+    width: 0%;
+    background-color:#00ff8850;
+    left: 0;
+    top:0;
+    transition: width 1s ease;
+}
+
+.button2:hover::before{
+  width: 100%;
+}
 
 
 
+
+
+ /*----------------- mobile responsive------------ */
+
+ @media screen and (max-width:576px) {
+     .btn2{
+        display:none;
+     }
+     .manue{
+        display: none;
+     }
+     .bar{
+        display: inline;
+     }
+
+     .banner-btn{
+        flex-wrap: wrap;
+        text-align: center;
+     }
+    
+ }
 
 
 
@@ -149,13 +342,37 @@
         <!-- navbar section -->
          <nav class="max-width">
             <h2>Tech<span class="wave">Wave</span></h2>
-            <ul>
+            <ul class="manue">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Episodes</a></li>
                 <li><a href="#">Host</a></li>
             </ul>
              <button class="btn btn2">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+             <img class="bar" src="./assets/hamburger-menu.png" alt="bar">
          </nav>
+
+        <!-- hero banner section -->
+         <section class="banner">
+             <div class="imgAndTextParent">
+                 <div class="shadow1"></div>
+                 <div class="shadow2"></div>
+                  <div class="image-div">
+                     <p class="new">new</p>
+                    <div class="image-circle">
+                     <img src="./assets/microphone.png" alt="">
+                    </div>
+                  </div>
+
+                  <div class="text-section">
+                     <h2>TechWave</h2>
+                     <p>Your daily dose of tech insights, productivity hacks, and personal growth</p>
+                     <div class="banner-btn">
+                        <button class="btn button"><img src="./assets/spotify.png" alt=""> <span>Listen on Spotify</span></button>
+                        <button class="button2"><img class="subscribimg" src="./assets/message.png" alt=""> <span class="subscribe">Subscribe</span></button>
+                     </div>
+                    </div>
+             </div>
+         </section>
     </header>
     <main></main>
     <footer></footer>
